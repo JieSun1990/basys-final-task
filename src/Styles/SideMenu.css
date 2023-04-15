@@ -1,0 +1,76 @@
+/* .sideMenu{
+    background-color: white;
+    margin-left: 5px;
+} */
+
+.sidebar {
+    height: calc(100% - 20px);
+    width: 22%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    margin-top: 10px;
+    margin-left: 30px;
+    border-radius: 10px;
+  }
+
+  .sidebar a {
+    display: block;
+    color: #000;
+    padding: 16px;
+    text-decoration: none;
+    margin-left: 5px;
+    font-family: 'Noto-Sans'; 
+    align-items: center;
+    width: calc(100% - 40px);
+    overflow: hidden; 
+  }
+
+  .sidebar a img {
+    width:22px;
+    height:22px;
+    float: left;
+  }
+
+  .sidebar>a>div {
+    float: right;
+    width: 88%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    
+  }
+  
+  .sidebar a:hover {
+    border-radius: 10px;
+    background-color: #f0f1f6;
+  }
+  
+  .sidebar a.active {
+    border-radius: 10px;
+    background-color: #ddd;
+  }
+
+  .sidebar > .container {
+    width: 100%;
+    overflow: hidden; 
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    font-family: 'Noto-Sans';
+    font-size:x-large;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar > .container > .left {
+    float: left;
+    width: 18%;
+  }
+  
+  .sidebar > .container > .right {
+    float: right;
+    width: 82%;
+    margin-bottom: 3px;
+  }  

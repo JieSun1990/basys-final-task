@@ -1,0 +1,61 @@
+h1 {
+  align-items: center;
+  text-align: center;
+  font-family: "Noto-Sans";
+  margin: 3rem;
+}
+
+.drugSearch {
+  /* margin: 5rem 3rem; */
+  padding: 0 2rem;
+  border: 1px black;
+}
+
+.drugSearch > p {
+  background-color: blue;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: white;
+}
+
+.drugInput {
+  background-color: white;
+  padding: 1rem;
+
+}
+
+.searchResult {
+  margin-top: 5rem;
+  padding: 0 2rem;
+}
+.searchResult > p {
+  background-color: blue;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: white;
+}
+.results {
+  background-color: white;
+  padding: 1rem 0.5rem;
+}
+
+/* Button {
+  padding: 1rem;
+  margin: 1rem;
+} */
+
+.buttons Button {
+  margin: 5rem 1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: white;
+  text-decoration: none;
+  background-color: blue;
+}
+
+.buttons Link{
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: white;
+}
