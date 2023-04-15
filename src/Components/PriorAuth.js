@@ -2,6 +2,7 @@ import { Button, Image, Box, Flex, Spacer, VStack, HStack } from '@chakra-ui/rea
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import '../Styles/PriorAuth.css'
+import ProgressBar2 from './ProgressBar/ProgressBar2'
 
 const PriorAuth = ({setValue}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,8 @@ const PriorAuth = ({setValue}) => {
     }
     return (
         <div>
-            <h1>Ontology Search</h1>
+            <ProgressBar2/>
+            <br />
             <div className="drugSearch">
                 <p>Enter the Drug Name: </p>
                 <div className="drugInput">

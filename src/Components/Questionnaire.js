@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from "react";
-import ProgressBar from "./ProgressBar/ProgressBar.js";
+import ProgressBar4 from "./ProgressBar/ProgressBar4.js";
 
 
 function Questionnaire(){
@@ -79,7 +79,7 @@ function Questionnaire(){
     }
     return (
         <div>
-            <ProgressBar />
+            <ProgressBar4 />
             <div id="questionnaire">
                 <div>
                     <span style={{fontSize:"25px",textDecoration:"underline",textUnderlineOffset: "5px"}}>Complete all the applicable sections of the below Questionnaire ( <span style={{color:"red"}}>*</span> Mandatory )</span>

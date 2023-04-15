@@ -7,6 +7,7 @@ import Details from './Components/Details';
 import { useState } from 'react';
 import DragAndDropForm from './Components/DragAndDropForm/DragAndDropForm';
 import Questionnaire from './Components/Questionnaire';
+import Header from './Components/Header';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
           </div>
           <div className='right'>
             <div>
-
+              <Header/>
               <Routes>
                 <Route path='/dragdrop' element={<DragAndDropForm/>} />
                 <Route path='/priorauth' element={<PriorAuth setValue={setValue} />} />

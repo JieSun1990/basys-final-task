@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css'
-function ProgressBar({value}) {
+function ProgressBar1() {
   return (
     <div id="wrapper">
       <div className="progress">
@@ -9,23 +9,23 @@ function ProgressBar({value}) {
         </div>
         <div className="point point--active">
           <div className="bullet"></div>
-          <label>Step 1</label>
+          <label>Drag & Drop Feature</label>
         </div>
         <div className='point'>
           <div className="bullet"></div>
-          <label>Step 2</label>
+          <label>Ontolgy Search</label>
         </div>
         <div className="point">
           <div className="bullet"></div>
-          <label>Step 3</label>
+          <label>EMR</label>
         </div>
         <div className="point">
           <div className="bullet"></div>
-          <label>Step 4</label>
+          <label>Questionnaire Optimisation</label>
         </div>
       </div>
     </div>
   );
 }
 
-export default ProgressBar;
+export default ProgressBar1;

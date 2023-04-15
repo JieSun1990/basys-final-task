@@ -2,6 +2,7 @@ import { Button, Flex, HStack, Spacer } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../Styles/Details.css'
+import ProgressBar2 from './ProgressBar/ProgressBar2';
 function Details({ value, setValue }) {
     const [qty, setQty] = useState('')
     const [day, setDay] = useState('')
@@ -16,6 +17,7 @@ function Details({ value, setValue }) {
 
     return (
         <div>
+            <ProgressBar2/>
             <div className="drugDetail">
                 <p>Enter the details of selected Drug: </p>
                 <div className="details">

@@ -3,7 +3,7 @@ import { NavContainer, Container, Draggable } from "./styles";
 import data from "../../utils/patientData";
 import PatientBox from "../PatientBox/PatientBox";
 import { Link } from 'react-router-dom'
-import ProgressBar from "../ProgressBar/ProgressBar.js";
+import ProgressBar1 from "../ProgressBar/ProgressBar1.js";
 const dummyPatient = {
   fname: "",
   lname: "",
@@ -62,26 +62,7 @@ function DragAndDropForm() {
 
   return (
     <Container>
-      <NavContainer>
-        <nav>
-          <strong>Hi, Dr. Lennon!</strong>
-          <ul>
-            <li title="Search">
-              <span class="material-icons">search</span>
-            </li>
-            <li title="Notifications">
-              <span class="material-icons">notifications</span>
-            </li>
-            <li title="Profile">
-              <span class="material-icons">account_circle</span>
-            </li>
-            <li title="Logout">
-              <span class="material-icons">logout</span>
-            </li>
-          </ul>
-        </nav>
-      </NavContainer>
-      <ProgressBar />
+      <ProgressBar1 />
       <div className="box">
       
         <div className="patient-info">
