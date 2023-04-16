@@ -19,7 +19,7 @@ const PriorAuth = ({setValue}) => {
     }
 
     return (
-        <div>
+        <div className='drug'>
             <ProgressBar2/>
             <br />
             <div className="drugSearch">
