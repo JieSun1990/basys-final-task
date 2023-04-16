@@ -27,7 +27,6 @@ function App() {
               <Header/>
               <Routes>
                 <Route path='/dragdrop' element={<DragAndDropForm/>} />
-
                 <Route path='/priorauth' element={<PriorAuth setVal={setVal} />} />
                 <Route path='/emr' element={<EMR drug={drug}/>} />
                 <Route path='/details' element={<Details val={val} setDrug={setDrug} />} />
