@@ -26,7 +26,7 @@ const SideMenu = () => {
                     </div>
                 </div>
 
-                <Link to="/priorauth" className={activeItem === "priorauth" ? "active" : ""} onClick={() => handleItemClick("priorauth")}>
+                <Link to="/dragdrop" className={activeItem === "priorauth" ? "active" : ""} onClick={() => handleItemClick("priorauth")}>
                     <Image src={auth} /> <div>Prior Authorization</div>
 
                 </Link>
