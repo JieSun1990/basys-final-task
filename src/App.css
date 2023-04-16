@@ -1,11 +1,11 @@
 .App{
-<<<<<<< HEAD
+
   background-color: #BFCADE;
   /* height: 100%; */
-=======
+
   background-color: var(--primBlue);
   height: 100%;
->>>>>>> 42d392463f7b753365126ece5957dd38eeb6eb1e
+
   width: 100%;
   padding: 0px;
   margin: 0px;
