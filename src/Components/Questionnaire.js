@@ -137,7 +137,7 @@ function Questionnaire(){
                             <div>
                                 <Button style={{margin:"0px 20px"}}>
                                     <Link style={{ color: 'white', textDecoration: 'none' }} to='/submitted'>
-                                        Next
+                                        Submit
                                     </Link>
                                 </Button>
                             </div>
