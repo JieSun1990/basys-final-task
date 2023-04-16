@@ -2,19 +2,47 @@ import { Button, Flex, HStack, Spacer } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../Styles/Details.css'
+import data from "../utils/drugDetails";
 import ProgressBar2 from './ProgressBar/ProgressBar2';
-function Details({ value, setValue }) {
+
+
+function Details({ val, setDrug }) {
     const [qty, setQty] = useState('')
     const [day, setDay] = useState('')
+    const [drugData, setDrugData] = useState([data])
+
+    // const index = drugData.findIndex(item => item.cptCode === val);
+
     const handleOnChangeQty = (event) => {
         setQty(event.target.value);
-        setValue(prevValue => ({ ...prevValue, ['Quantity']: qty }));
+        // setValue(prevValue => ({ ...prevValue, ['Quantity']: qty }));
+
     }
     const handleOnChangeDay = (event) => {
         setDay(event.target.value);
-        setValue(prevValue => ({ ...prevValue, ['SupplyDay']: day }));
+        // setValue(prevValue => ({ ...prevValue, ['SupplyDay']: day }));
     }
 
+    const filteredDrug = drugData[0].filter(
+        (drugData) =>
+            drugData.drugname.toLowerCase().includes(val.toLowerCase()) ||
+            drugData.cptCode.toString().includes(val)
+    );
+
+    const handleOnSubmit = () => {
+        {
+            filteredDrug.length > 0 ? (
+                filteredDrug.map((drugData, index) => (
+                    drugData.qty= qty,
+                    drugData.day= day
+                ))
+            ) : (
+            <strong>NO RESULT FOUND </strong>
+        )
+        }
+        setDrug(filteredDrug);
+        console.log(filteredDrug);
+    }
 
     return (
         <div>
@@ -24,14 +52,12 @@ function Details({ value, setValue }) {
                 <div className="details">
                     <HStack>
                         <p>Drug name:</p>
-                        <p>{value.DrugName}</p>
+                        <p>{val}</p>
                     </HStack>
                     <HStack>
                         <label>Quantity: </label>
-                        {/* <Spacer /> */}
                         <input type="text" onChange={handleOnChangeQty} />
                         <Spacer />
-                        {/* <Spacer /> */}
                         <label>Day Supply: </label>
                         <Spacer />
                         <input type="text" onChange={handleOnChangeDay} />
@@ -67,7 +93,7 @@ function Details({ value, setValue }) {
                             </Button>
                         </div>
                         <div>
-                            <Button>
+                            <Button onClick={handleOnSubmit}>
                                 <Link style={{ color: 'white', textDecoration: 'none' }} to={'/emr'}>Next</Link>
                             </Button>
                         </div>

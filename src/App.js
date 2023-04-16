@@ -13,7 +13,8 @@ import Submitted from './Components/Submitted/Submitted';
 
 
 function App() {
-  const [value, setValue] = useState([]);
+  const [val, setVal] = useState('');
+  const [drug, setDrug] = useState([]);
   return (
     <div className="App">
       <Router>
@@ -26,11 +27,13 @@ function App() {
               <Header/>
               <Routes>
                 <Route path='/dragdrop' element={<DragAndDropForm/>} />
-                <Route path='/priorauth' element={<PriorAuth setValue={setValue} />} />
-                <Route path='/emr' element={<EMR/>} />
-                <Route path='/details' element={<Details value={value} setValue={setValue} />} />
-                <Route path='/questionnaire' element={<Questionnaire />} />
+
+                <Route path='/priorauth' element={<PriorAuth setVal={setVal} />} />
+                <Route path='/emr' element={<EMR drug={drug}/>} />
+                <Route path='/details' element={<Details val={val} setDrug={setDrug} />} />
+                <Route path='/questionnaire/:id' element={<Questionnaire drug={drug} />} />
                 <Route path='/submitted' element={<Submitted />} />
+
               </Routes>
             </div>
           </div>
