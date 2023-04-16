@@ -28,8 +28,7 @@ function App() {
                 <Route path='/priorauth' element={<PriorAuth setValue={setValue} />} />
                 <Route path='/emr' element={<EMR/>} />
                 <Route path='/details' element={<Details value={value} setValue={setValue} />} />
-                <Route path='/questionnaire/:id' element={<Questionnaire />} />
-
+                <Route path='/questionnaire' element={<Questionnaire />} />
               </Routes>
             </div>
           </div>

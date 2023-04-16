@@ -9,7 +9,7 @@ function Questionnaire(){
 
     useEffect(()=>{
         async function getData(){
-            const que = await fetch('http://localhost:5555/api/questions?disease=cancer');
+            const que = await fetch('http://localhost:5555/api/questions?disease=diabetes');
             var questions = await que.json();
             questions.sort((a,b)=>{
                 return a.id-b.id;

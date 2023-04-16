@@ -192,7 +192,7 @@ const EMR = ({ value }) => {
                     </div>
                     <div style={{ marginLeft: "89%", fontSize: "2rem", backgroundColor: "white", width: "6.5rem", textAlign: 'center', marginTop: "1rem", borderRadius: "30px" }}>
 
-                        <Link to={`/questionnaire/${id}`}>Next</Link>
+                        <Link to={`/questionnaire`}>Next</Link>
                     </div>
                 </div>
             </div>
