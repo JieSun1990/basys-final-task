@@ -1,30 +1,31 @@
 import React,{useEffect, useState} from "react";
 import ProgressBar4 from "./ProgressBar/ProgressBar4.js";
+import "../Styles/Questionnaire.css";
 
 
 function Questionnaire(){
     const [data,setData] = useState([]);
 
-    // useEffect(()=>{
-    //     async function getData(){
-    //         const que = await fetch('http://localhost:5555/api/questions?disease=cancer');
-    //         var questions = await que.json();
-    //         questions.sort((a,b)=>{
-    //             return a.id-b.id;
-    //         })
-    //         questions.forEach((question)=>{
-    //             if(question.default){
-    //                 question.value=question.default;
-    //             }
-    //             else
-    //             {
-    //                 question.value='';
-    //             }
-    //         })
-    //         setData(questions);
-    //     }
-    //     getData();
-    // },[]);
+    useEffect(()=>{
+        async function getData(){
+            const que = await fetch('http://localhost:5555/api/questions?disease=cancer');
+            var questions = await que.json();
+            questions.sort((a,b)=>{
+                return a.id-b.id;
+            })
+            questions.forEach((question)=>{
+                if(question.default){
+                    question.value=question.default;
+                }
+                else
+                {
+                    question.value='';
+                }
+            })
+            setData(questions);
+        }
+        getData();
+    },[]);
     
     function handleChange(e,index){
         const value = e.target.value
