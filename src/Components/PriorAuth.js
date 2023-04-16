@@ -3,34 +3,59 @@ import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import '../Styles/PriorAuth.css'
 import ProgressBar2 from './ProgressBar/ProgressBar2'
+import data from "../utils/drugDetails";
+// import drugDetail from '../../backend/models/drugDetails'
+import axios from 'axios'
 
-const PriorAuth = ({setValue}) => {
+const PriorAuth = ({ setValue }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [ID, setID] = useState('.')
     const [pageData, setData] = useState([]);
-    const togglePopup = () => {
+    const [searchTerm, setSearchTerm] = useState("");
+    const [drugData, setDrugData] = useState([data])
+
+    const handleOnSearch = () => {
         setIsOpen(true);
-        console.log('open');
-        setValue(prevValue => ({...prevValue, ['DrugName']: ID}));
     }
+
+    // useEffect(() => {
+    //     if (isOpen === true) {
+    //         axios
+    //             .get(`http://localhost:5555/drugDetails/${ID}`)
+    //             .then((response) => {
+    //                 setData(response.data);
+    //             })
+    //             .catch((error) => {
+    //                 console.log(error);
+    //             });
+    //     }
+    // }, [isOpen]);
+    // console.log(pageData)
 
     const handleOnChange = (event) => {
         setID(event.target.value);
+        setSearchTerm(event.target.value);
     }
 
+    const filteredDrug = drugData[0].filter(
+        (drugData) =>
+            drugData.drugname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            drugData.cptCode.toString().includes(searchTerm)
+    );
+    
     return (
         <div className='drug'>
-            <ProgressBar2/>
+            <ProgressBar2 />
             <br />
             <div className="drugSearch">
                 <p>Enter the Drug Name: </p>
                 <div className="drugInput">
                     <HStack>
                         <p>Drug name:</p>
-                        <input type="text" size='50' onChange={handleOnChange} />
-                        <Spacer/>
-                        <Button onClick={togglePopup}>Search</Button>
-                        <Spacer/>
+                        <input type="text" size='50' onChange={handleOnChange} value={searchTerm} />
+                        <Spacer />
+                        <Button onClick={handleOnSearch}>Search</Button>
+                        <Spacer />
 
                     </HStack>
                 </div>
@@ -39,7 +64,10 @@ const PriorAuth = ({setValue}) => {
             {isOpen &&
                 <div className="searchResult">
                     <p>Search Results: </p>
+                    
                     <div className="results">
+                        {filteredDrug.length > 0 ? (
+                        filteredDrug.map((drugData, index) =>(
                         <Flex>
                             <div>
                                 <div>Drug Name:</div>
@@ -50,15 +78,15 @@ const PriorAuth = ({setValue}) => {
                             </div>
                             <Spacer />
                             <div>
-                                <div>{ID}</div>
+                                <div>{drugData.drugname}</div>
                                 <br />
-                                <div>VIAL (EA)</div>
+                                <div>{drugData.dosageForm}</div>
                                 <br />
-                                <div>1.0 each</div>
+                                <div>{drugData.packageSize}</div>
                             </div>
                             <Spacer />
                             <div>
-                                <div>150 mg</div>
+                                <div>{drugData.conc}</div>
                                 <br />
                                 <div>Drug Class:</div>
                                 <br />
@@ -68,13 +96,18 @@ const PriorAuth = ({setValue}) => {
                             <div>
                                 <div><br /></div>
                                 <br />
-                                <div>RX</div>
+                                <div>{drugData.drugClass}</div>
                                 <br />
-                                <div>J2357</div>
+                                <div>{drugData.cptCode}</div>
                             </div>
                             <Spacer />
 
                         </Flex>
+                    
+                     ))
+                     ) : (
+                      <strong>NO RESULT FOUND </strong>
+                    )} 
                     </div>
                     <div className='buttons'>
                         <Flex>
