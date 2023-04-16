@@ -91,7 +91,7 @@ function Questionnaire(){
                                 return null;
                             }
                             else if(question.type==="text" || question.type==="number" || question.type==="date"){
-                                return <div style={{margin:"20px 0px"}}><p style={{marginBottom:"8px",fontWeight:"bold"}}>{question.que} {question.required?<span style={{color:"red"}}>*</span>:null}</p><input style={{width:"95%",height:"20px",borderRadius:"5px",padding:"5px",fontSize:"15px"}} id={question.id} type={question.type} value={question.value} required={question.required} onChange={(event) => handleChange(event, index)}></input></div>
+                                return <div style={{margin:"20px 0px"}}><p style={{marginBottom:"8px",fontWeight:"bold"}}>{question.que} {question.required?<span style={{color:"red"}}>*</span>:null} {question.emr?"(Autofilled from EMR)":null}</p><input style={{width:"95%",height:"20px",borderRadius:"5px",padding:"5px",fontSize:"15px"}} id={question.id} type={question.type} value={question.emr?"500" : question.value} required={question.required} disabled={question.emr} onChange={(event) => handleChange(event, index)}></input></div>
                             }
                             else if(question.type==="checkbox"){
                                 return (

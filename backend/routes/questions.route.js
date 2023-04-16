@@ -3,8 +3,8 @@ const router = require("express").Router();
 
 const questions1 = [
     {disease:"diabetes",que:"Does the patient have a family history of diabetes?",type:"radio",options:['Yes','No'],id:"1"},
-    {disease:"diabetes",que:"What is patient's weight?",type:"number",id:"2",required:true},
-    {disease:"diabetes",que:"What is patient's height?",type:"number",id:"3",required:true},
+    {disease:"diabetes",que:"What is patient's weight?",type:"number",id:"2",emr:true,required:true},
+    {disease:"diabetes",que:"What is patient's height?",type:"number",id:"3",emr:true,required:true},
     {disease:"diabetes",que:"Has the patient been diagnosed with diabetes before?",default:"Yes",type:"radio",options:['Yes','No'],dependentQuestion:["5","6"],dependencyValue:"No",id:"4",required:true},
     {disease:"diabetes",que:"Is the patient currently taking any medication for diabetes?",default:"Yes",type:"radio",options:['Yes','No'],dependentQuestion:["6"],dependencyValue:"No",id:"5",required:true},
     {disease:"diabetes",que:"What is the patient's current HbA1c level?",default:"7.0",type:"number",id:"6"},
@@ -30,7 +30,7 @@ const questions2 = [
 router.get('/',async (req,res)=>{
     // const disease = req.query.disease;
     // const questions = await Question.find({disease:disease});
-    res.send(questions2);
+    res.send(questions1);
 })
 
 // const questions3 = [
@@ -60,8 +60,8 @@ router.get('/',async (req,res)=>{
 // ]
 
 // const questions5 = [
-//     {disease:"hyperlipidemia",que:"What is the patient's weight?",type:"number",required:true,id:"1"},
-//     {disease:"hyperlipidemia",que:"What is the patient's height?",type:"number",required:true,id:"2"},
+//     {disease:"hyperlipidemia",que:"What is the patient's weight?",type:"number",required:true,emr:true,id:"1"},
+//     {disease:"hyperlipidemia",que:"What is the patient's height?",type:"number",required:true,emr:true,id:"2"},
 //     {disease:"hyperlipidemia",que:"Does the patient have a history of liver disease?",type:"radio",options:['Yes','No'],required:true,dependentQuestion:["4","5"],dependencyValue:"No",id:"3"},
 //     {disease:"hyperlipidemia",que:"What is patient's LDL cholestrol level?",type:"number",required:true,id:"4"},
 //     {disease:"hyperlipidemia",que:"What is patient's HDL cholestrol level?",type:"number",required:true,id:"5"},
