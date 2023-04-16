@@ -15,9 +15,10 @@ function Details({ value, setValue }) {
         setValue(prevValue => ({ ...prevValue, ['SupplyDay']: day }));
     }
 
+
     return (
         <div>
-            <ProgressBar2/>
+            <ProgressBar2 />
             <div className="drugDetail">
                 <p>Enter the details of selected Drug: </p>
                 <div className="details">
