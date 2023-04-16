@@ -25,10 +25,12 @@ export const Container = styled.div`
   div{
     padding:8px;
     flex-grow:1;
+    
   }
   span{
     display: flex;
-    justify-content: flex-start;
+    justify-content:flex-start;
+    align-items: center;
     padding: 2px;
     p{
         padding-left: 5px;

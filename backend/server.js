@@ -2,11 +2,14 @@ const express = require("express");
 const app = express();
 const connect = require("./connect")
 const questionRoute = require('./routes/questions.route');
+const patientInfoRoute = require("./routes/patientInfo");
+
 const cors = require('cors');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
+app.use("/api/patientInfo", patientInfoRoute);
 app.use('/api/questions',questionRoute);
 
 app.listen(5555,()=>{

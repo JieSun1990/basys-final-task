@@ -5,6 +5,7 @@
   padding: 0px;
   margin: 0px;
   color: #0e2547;
+  /* overflow-y: auto; */
 }
 
 .App > .container {

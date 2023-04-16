@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavContainer, Container, Draggable } from "./styles";
 import data from "../../utils/patientData";
 import PatientBox from "../PatientBox/PatientBox";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import ProgressBar1 from "../ProgressBar/ProgressBar1.js";
 const dummyPatient = {
   fname: "",
   lname: "",
   dob: "",
-  age:"",
+  age: "",
   gender: "",
   id: "",
   height: "", // height in cm
@@ -16,11 +16,19 @@ const dummyPatient = {
   bloodGroup: "",
 };
 
-
 function DragAndDropForm() {
   const [patients, setPatients] = useState([data]);
   const [formData, setFormData] = useState(dummyPatient);
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    async function getData() {
+      const result = await fetch("http://localhost:5555/api/patientInfo");
+      let res = await result.json();
+      console.log(res);
+    }
+    getData();
+  }, []);
 
   const handleDrop = (event) => {
     event.preventDefault();
@@ -45,7 +53,6 @@ function DragAndDropForm() {
     e.preventDefault();
     console.log(formData);
     setFormData(dummyPatient);
-    
   };
 
   const handleSearch = (event) => {
@@ -64,7 +71,6 @@ function DragAndDropForm() {
     <Container>
       <ProgressBar1 />
       <div className="box">
-      
         <div className="patient-info">
           <div className="patient-search">
             <h2>List of Patients</h2>
@@ -206,8 +212,11 @@ function DragAndDropForm() {
                 onChange={handleInputChange}
               />
             </div>
-              <Link to={'/priorauth'}>
-            <input type="submit" value="Next" className="next-btn"  />
+
+            <Link to={"/priorauth"}>
+              <button type="submit" value="Next" className="next-btn">
+                Next
+              </button>
             </Link>
           </form>
         </div>

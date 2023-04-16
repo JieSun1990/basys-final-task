@@ -31,22 +31,23 @@ export const Container = styled.div`
     flex-grow: 1;
     justify-content: space-evenly;
     gap: 30px;
+    width: 100%;
     h2 {
       padding-bottom: 10px;
     }
     form {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      height: 100%;
-      height: min(90%, 450px);
+      /* width: 100%; */
+      /* height: 100%; */
+      height: min(90%, 410px);
 
       background-color: var(--white);
       /* height: 130px; */
       border-radius: 7px;
       font-size: 1rem;
       padding: 10px;
-      margin-top:7px;
+      margin-top:8px;
       max-width: 700px;
       font-weight: 500;
       transition: 0.15s ease-in-out;
@@ -62,23 +63,48 @@ export const Container = styled.div`
       justify-content: space-between;
       input{
         width:50%;
+        /* height: 100%; */
         border-radius: 10px;
         border: none;
-        margin: 5px;
+        margin: 20px 5px;
         padding:2px;
       }
     }
     .patient-form {
       flex-grow: 1;
+      margin-right: 10px;
+      
     }
     .patient-list {
       flex-grow: 1;
-      height: min(90%, 450px);
+      height: min(90%, 430px);
+      min-height:430px;
       border-radius: 15px;
-      margin-top: 8px;
+      /* margin-top: 5px; */
       padding-right: 10px;
-      overflow: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+      /* width */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
 
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: var(--secBlue); 
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--secBlue); 
+      }
       strong{
         padding: 10px;
       }
