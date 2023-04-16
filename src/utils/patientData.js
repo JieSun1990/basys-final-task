@@ -1,59 +1,155 @@
 const patients = [
     {
-      fname: 'Sarah',
-      lname:'Johnson',
-      dob: '1990-08-15',
-      age: 32,
+      fname: 'Ava',
+      lname: 'Robinson',
+      dob: '1992-10-08',
+      age: 30,
       gender: 'Female',
-      id: 78901234,
-      height: 165, // height in cm
-      weight: 68, // weight in kg
-      bloodGroup: 'B+'
+      id: 82701662,
+      height: 167,
+      weight: 62,
+      bloodGroup: 'AB+',
+      bmi: 22.2,
+      medicalhis: { disease: [ 'High Blood Pressure', 'Cancer' ], allergies: [ 'Pollen' ] },
+      familyhis: { fatherside: [ 'Diabetes' ], motherside: [ 'Asthma' ] },
+      status: 'Pending'
     },
     {
-      fname: 'John',
-      lname:'Smith',
-      dob: '1985-06-22',
-      age: 37,
+      fname: 'Ethan',
+      lname: 'Garcia',
+      dob: '1988-05-17',
+      age: 35,
       gender: 'Male',
-      id: 78901235,
-      height: 182, // height in cm
-      weight: 85, // weight in kg
-      bloodGroup: 'O+'
+      id: 19283746,
+      height: 185,
+      weight: 82,
+      bloodGroup: 'O+',
+      bmi: 23.9,
+      medicalhis: { disease: [ 'Asthma' ], allergies: [ 'Peanuts', 'Seafood' ] },
+      familyhis: { fatherside: [ 'Heart Disease' ], motherside: [ 'Depression' ] },
+      status: 'Active'
     },
     {
-      fname: 'Lisa',
-      lname:'Chen',
-      dob: '1993-12-10',
-      age: 29,
+      fname: 'Emma',
+      lname: 'Nguyen',
+      dob: '1995-02-12',
+      age: 28,
       gender: 'Female',
-      id: 78901236,
-      height: 157, // height in cm
-      weight: 54, // weight in kg
-      bloodGroup: 'A-'
+      id: 34567890,
+      height: 160,
+      weight: 55,
+      bloodGroup: 'B-',
+      bmi: 21.5,
+      medicalhis: { disease: [ 'Migraine', 'Anxiety' ], allergies: [ 'Dust', 'Pollen' ] },
+      familyhis: { fatherside: [ 'Arthritis' ], motherside: [ 'High Blood Pressure' ] },
+      status: 'Pending'
     },
     {
-      fname: 'David',
-      lname:'Lee',
-      dob: '1978-03-05',
-      age: 44,
+      fname: 'Noah',
+      lname: 'Lee',
+      dob: '2001-07-30',
+      age: 22,
       gender: 'Male',
-      id: 78901237,
-      height: 178, // height in cm
-      weight: 75, // weight in kg
-      bloodGroup: 'AB+'
+      id: 98765432,
+      height: 175,
+      weight: 70,
+      bloodGroup: 'A+',
+      bmi: 22.9,
+      medicalhis: { disease: ['diabetes'], allergies: [ 'Cats' ] },
+      familyhis: { fatherside: [ 'Depression', 'Diabetes' ], motherside: [] },
+      status: 'Active'
     },
     {
-      fname: 'Emily',
-      lname:'Nguyen',
-      dob: '1998-11-20',
-      age: 24,
+      fname: 'Sophia',
+      lname: 'Wang',
+      dob: '1982-12-01',
+      age: 41,
       gender: 'Female',
-      id: 78901238,
-      height: 163, // height in cm
-      weight: 61, // weight in kg
-      bloodGroup: 'B-'
+      id: 65432109,
+      height: 168,
+      weight: 60,
+      bloodGroup: 'AB-',
+      bmi: 21.3,
+      medicalhis: { disease: [ 'Thyroid Disorder' ], allergies: [ 'Shellfish', 'Pollen' ] },
+      familyhis: { fatherside: [ 'Heart Disease' ], motherside: [ 'Asthma', 'Arthritis' ] },
+      status: 'Pending'
+    },
+    {
+      fname: 'Emma',
+      lname: 'Wilson',
+      dob: '1987-05-12',
+      age: 34,
+      gender: 'Female',
+      id: 34890872,
+      height: 162,
+      weight: 55,
+      bloodGroup: 'O+',
+      bmi: 20.9,
+      medicalhis: { disease: [ 'Migraine', 'Depression' ], allergies: [ 'Dust' ] },
+      familyhis: { fatherside: [ 'High Cholesterol' ], motherside: [ 'Asthma' ] },
+      status: 'Pending'
+    },
+    {
+      fname: 'Ethan',
+      lname: 'Lee',
+      dob: '1990-12-25',
+      age: 31,
+      gender: 'Male',
+      id: 90285681,
+      height: 175,
+      weight: 72,
+      bloodGroup: 'A-',
+      bmi: 23.5,
+      medicalhis: { disease: [ 'Diabetes', 'Asthma' ], allergies: [ 'Pollen' ] },
+      familyhis: { fatherside: [ 'High Blood Pressure' ], motherside: [ 'Cancer' ] },
+      status: 'Pending'
+    },
+    {
+      fname: 'Olivia',
+      lname: 'Harris',
+      dob: '1985-08-18',
+      age: 36,
+      gender: 'Female',
+      id: 18790564,
+      height: 170,
+      weight: 68,
+      bloodGroup: 'B+',
+      bmi: 23.5,
+      medicalhis: { disease: [ 'Arthritis', 'Migraine' ], allergies: [ 'Pollen' ] },
+      familyhis: { fatherside: [ 'Cancer' ], motherside: [ 'Asthma' ] },
+      status: 'Pending'
+    },
+    {
+      fname: 'Aiden',
+      lname: 'Nguyen',
+      dob: '1993-04-01',
+      age: 28,
+      gender: 'Male',
+      id: 13890576,
+      height: 180,
+      weight: 80,
+      bloodGroup: 'AB-',
+      bmi: 24.7,
+      medicalhis: { disease: [ 'High Cholesterol', 'Depression' ], allergies: [ 'Dust' ] },
+      familyhis: { fatherside: [ 'Diabetes' ], motherside: [ 'Cancer' ] },
+      status: 'Pending'
+    },
+    {
+      fname: 'Sophia',
+      lname: 'Kim',
+      dob: '1995-06-10',
+      age: 26,
+      gender: 'Female',
+      id: 34908654,
+      height: 163,
+      weight: 56,
+      bloodGroup: 'O-',
+      bmi: 21,
+      medicalhis: { disease: [ 'Asthma', 'High Blood Pressure' ], allergies: [ 'Dust' ] },
+      familyhis: { fatherside: [ 'Cancer' ], motherside: [ 'Diabetes' ] },
+      status: 'Pending'
     }
   ];
+
   
   export default patients

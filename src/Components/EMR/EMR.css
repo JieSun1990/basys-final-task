@@ -95,6 +95,8 @@
   
   body{
       background-color: #d9e1f2;
+      height: 100%;
+      /* overflow-y: auto; */
   }
   .right-side-container{
       /* margin-left: 22rem; */

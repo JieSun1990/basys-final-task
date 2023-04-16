@@ -1,5 +1,6 @@
 import styled from "styled-components";
 export const Container = styled.div`
+  overflow:hidden;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -57,6 +58,7 @@ export const Container = styled.div`
     }
     .patient-info{
       min-width: 600px;
+      max-height: 510px;
     }
     .patient-search{
       display: flex;
@@ -118,12 +120,13 @@ export const Container = styled.div`
         justify-content: space-around; */
         font-size: 1.25 rem;
       }
-      input {
+      button {
         /* margin-left: auto; */
         font-size: 1.25 rem;
         padding-left: 10px;
         border-radius: 5px;
         width: 70%;
+        
       }
     }
     .next-btn {
@@ -136,9 +139,16 @@ export const Container = styled.div`
       font-size: 1.1rem;
       text-align:center;
 
-      :hover {
+      /* :hover {
         background-color: var(--white);
         color: var(--secBlue);
+      }*/
+      #next{
+        color: white;
+        /* :hover{
+        color: var(--secBlue); */
+
+        } 
       }
     }
   }

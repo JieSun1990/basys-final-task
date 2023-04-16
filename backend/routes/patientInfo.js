@@ -7,7 +7,9 @@ router.get('/', (req, res) => {
         console.error(err);
         res.status(500).send('Error retrieving patientInfo data');
       } else {
-        // res.json(data);
+        // res.send(data);
+        res.status(200).send(data);
+
         console.log(data);
       }
     });

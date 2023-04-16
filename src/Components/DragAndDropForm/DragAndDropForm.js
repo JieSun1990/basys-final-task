@@ -66,6 +66,10 @@ function DragAndDropForm() {
       patient.lname.toLowerCase().includes(searchTerm.toLowerCase()) ||
       patient.id.toString().includes(searchTerm)
   );
+  const queryString = Object.keys(formData.id)
+  .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(formData[key])}`)
+  .join('&');
+const url = `https://example.com/next-component?${queryString}`;
 
   return (
     <Container>
@@ -212,12 +216,13 @@ function DragAndDropForm() {
                 onChange={handleInputChange}
               />
             </div>
-
-            <Link to={"/priorauth"}>
-              <button type="submit" value="Next" className="next-btn">
-                Next
-              </button>
+            <button type="submit" value="Next"  className="next-btn">
+            
+            <Link to={`/priorauth/${queryString}`} id="next" >
+            Next
             </Link>
+              </button>
+
           </form>
         </div>
       </div>
