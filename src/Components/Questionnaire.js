@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom'
 import ProgressBar4 from "./ProgressBar/ProgressBar4.js";
 import "../Styles/Questionnaire.css";
 import { Button, Flex, Spacer } from '@chakra-ui/react';
+import patients from '../utils/patientData.js';
 
+const disease = patients[6].medicalhis.disease[0].toLowerCase();
+const height = patients[6].height;
+const weight = patients[6].weight;
 
 function Questionnaire(){
     const [data,setData] = useState([]);
-
     useEffect(()=>{
         async function getData(){
-            const que = await fetch('http://localhost:5555/api/questions?disease=diabetes');
+            const que = await fetch(`http://localhost:5555/api/questions?disease=${disease}`);
             var questions = await que.json();
             questions.sort((a,b)=>{
                 return a.id-b.id;
@@ -92,7 +95,13 @@ function Questionnaire(){
                                 return null;
                             }
                             else if(question.type==="text" || question.type==="number" || question.type==="date"){
-                                return <div style={{margin:"20px 0px"}}><p style={{marginBottom:"8px",fontWeight:"bold"}}>{question.que} {question.required?<span style={{color:"red"}}>*</span>:null} {question.emr?"(Autofilled from EMR)":null}</p><input style={{width:"95%",height:"20px",borderRadius:"5px",padding:"5px",fontSize:"15px"}} id={question.id} type={question.type} value={question.emr?"500" : question.value} required={question.required} disabled={question.emr} onChange={(event) => handleChange(event, index)}></input></div>
+                                if(question.emr){
+                                    return <div style={{margin:"20px 0px"}}><p style={{marginBottom:"8px",fontWeight:"bold"}}>{question.que} {question.required?<span style={{color:"red"}}>*</span>:null} (Autofilled from EMR)</p><input style={{width:"95%",height:"20px",borderRadius:"5px",padding:"5px",fontSize:"15px"}} id={question.id} type={question.type} value={question.weight?weight:height} required={question.required} disabled onChange={(event) => handleChange(event, index)}></input></div>
+                                }
+                                else
+                                {
+                                    return <div style={{margin:"20px 0px"}}><p style={{marginBottom:"8px",fontWeight:"bold"}}>{question.que} {question.required?<span style={{color:"red"}}>*</span>:null}</p><input style={{width:"95%",height:"20px",borderRadius:"5px",padding:"5px",fontSize:"15px"}} id={question.id} type={question.type} value={question.value} required={question.required} onChange={(event) => handleChange(event, index)}></input></div>
+                                }
                             }
                             else if(question.type==="checkbox"){
                                 return (
