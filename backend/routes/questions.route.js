@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Question = require("../models/questionnaire");
+// const Question = require("../models/questionnaire");
 
 const questions1 = [
     {disease:"diabetes",que:"Does the patient have a family history of diabetes?",type:"radio",options:['Yes','No'],id:"1"},
