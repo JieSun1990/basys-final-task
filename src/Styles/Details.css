@@ -4,7 +4,7 @@
   border: 1px black;
 }
 .drugDetail > p {
-  background-color: blue;
+  background-color: var(--secBlue);
   padding: 0.5rem;
   color: white;
   font-weight: bold;
