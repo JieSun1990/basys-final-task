@@ -104,7 +104,7 @@ function DragAndDropForm() {
                 </Draggable>
               ))
             ) : (
-              <strong>NO RESULT FOUND :(</strong>
+              <strong>NO RESULT FOUND </strong>
             )}
           </div>
         </div>

@@ -6,9 +6,7 @@ h1 {
 }
 
 .drugSearch {
-  /* margin: 5rem 3rem; */
   padding: 0 2rem;
-  border: 1px black;
 }
 
 .drugSearch > p {
@@ -39,10 +37,6 @@ h1 {
   padding: 1rem 0.5rem;
 }
 
-/* Button {
-  padding: 1rem;
-  margin: 1rem;
-} */
 
 .buttons Button {
   margin: 5rem 1rem;

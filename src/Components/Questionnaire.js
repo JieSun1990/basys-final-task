@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from "react";
+import { Link } from 'react-router-dom'
 import ProgressBar4 from "./ProgressBar/ProgressBar4.js";
 import "../Styles/Questionnaire.css";
 
@@ -122,7 +123,9 @@ function Questionnaire(){
                                     )
                         })}
                     </form>
+                    <Link to={'/emr'}>
                     <button style={{float:"left"}}>Prev</button>
+                    </Link>
                     <button style={{float:"right"}}>Next</button>
                 </div>
             </div>

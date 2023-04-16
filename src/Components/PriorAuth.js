@@ -17,6 +17,7 @@ const PriorAuth = ({setValue}) => {
     const handleOnChange = (event) => {
         setID(event.target.value);
     }
+
     return (
         <div>
             <ProgressBar2/>
@@ -95,12 +96,7 @@ const PriorAuth = ({setValue}) => {
                         </Flex>
                     </div>
                 </div>
-
-
             }
-
-
-
         </div>
 
     )

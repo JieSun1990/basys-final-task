@@ -8,6 +8,7 @@ import { useState } from 'react';
 import DragAndDropForm from './Components/DragAndDropForm/DragAndDropForm';
 import Questionnaire from './Components/Questionnaire';
 import Header from './Components/Header';
+import EMR from './Components/EMR/EMR';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Routes>
                 <Route path='/dragdrop' element={<DragAndDropForm/>} />
                 <Route path='/priorauth' element={<PriorAuth setValue={setValue} />} />
+                <Route path='/emr' element={<EMR/>} />
                 <Route path='/details' element={<Details value={value} setValue={setValue} />} />
                 <Route path='/questionnaire' element={<Questionnaire />} />
 

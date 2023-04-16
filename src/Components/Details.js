@@ -67,7 +67,7 @@ function Details({ value, setValue }) {
                         </div>
                         <div>
                             <Button>
-                                <Link style={{ color: 'white', textDecoration: 'none' }} to={'/questionnaire'}>Next</Link>
+                                <Link style={{ color: 'white', textDecoration: 'none' }} to={'/emr'}>Next</Link>
                             </Button>
                         </div>
                     </Flex>
