@@ -4,6 +4,7 @@ import data from "../../utils/patientData";
 import PatientBox from "../PatientBox/PatientBox";
 import { Link } from "react-router-dom";
 import ProgressBar1 from "../ProgressBar/ProgressBar1.js";
+import axios from 'axios';
 const dummyPatient = {
   fname: "",
   lname: "",
@@ -22,12 +23,12 @@ function DragAndDropForm() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    async function getData() {
-      const result = await fetch("http://localhost:5555/api/patientInfo");
-      let res = await result.json();
-      console.log(res);
+    async function fetchData() {
+      const result = await axios.get('http://localhost:5555/api/patientInfo');
+      // setPatients(result.data);
+      console.log(result.data[0])
     }
-    getData();
+    fetchData();
   }, []);
 
   const handleDrop = (event) => {

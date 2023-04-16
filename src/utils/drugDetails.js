@@ -6,8 +6,8 @@ const drugs = [
         drugClass: 'RX',
         packageSize: '3.0 each',
         cptCode: 'J2356',
-        day: '',
-        qty: '',
+        day: '1',
+        qty: '5',
     },
     {
         drugname: 'Vitamin 500MG',
@@ -16,8 +16,8 @@ const drugs = [
         drugClass: 'VT',
         packageSize: '1.0 each',
         cptCode: 'J2357',
-        day: '',
-        qty: '',
+        day: '5',
+        qty: '2',
     },
     {
         drugname: 'Anti-Biotic 250MG',

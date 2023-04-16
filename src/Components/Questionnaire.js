@@ -15,6 +15,7 @@ function Questionnaire(){
         async function getData(){
             const que = await fetch(`http://localhost:5555/api/questions?disease=${disease}`);
             var questions = await que.json();
+            console.log(questions)
             questions.sort((a,b)=>{
                 return a.id-b.id;
             })
