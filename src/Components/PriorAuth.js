@@ -4,8 +4,6 @@ import React, { useEffect, useState } from 'react'
 import '../Styles/PriorAuth.css'
 import ProgressBar2 from './ProgressBar/ProgressBar2'
 import data from "../utils/drugDetails";
-// import drugDetail from '../../backend/models/drugDetails'
-import axios from 'axios'
 
 const PriorAuth = ({ setVal }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,20 +15,6 @@ const PriorAuth = ({ setVal }) => {
     const handleOnSearch = () => {
         setIsOpen(true);
     }
-
-    // useEffect(() => {
-    //     if (isOpen === true) {
-    //         axios
-    //             .get(`http://localhost:5555/drugDetails/${ID}`)
-    //             .then((response) => {
-    //                 setData(response.data);
-    //             })
-    //             .catch((error) => {
-    //                 console.log(error);
-    //             });
-    //     }
-    // }, [isOpen]);
-    // console.log(pageData)
 
     const handleOnChange = (event) => {
         setID(event.target.value);
@@ -109,6 +93,7 @@ const PriorAuth = ({ setVal }) => {
                             <strong>NO RESULT FOUND </strong>
                         )}
                     </div>
+                    
                     <div className='buttons'>
                         <Flex>
                             <Spacer />
