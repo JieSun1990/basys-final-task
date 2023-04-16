@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 import { Link } from 'react-router-dom'
 import ProgressBar4 from "./ProgressBar/ProgressBar4.js";
 import "../Styles/Questionnaire.css";
+import { Button, Flex, Spacer } from '@chakra-ui/react';
 
 
 function Questionnaire(){
@@ -123,10 +124,25 @@ function Questionnaire(){
                                     )
                         })}
                     </form>
-                    <Link to={'/emr'}>
-                    <button style={{float:"left"}}>Prev</button>
-                    </Link>
-                    <button style={{float:"right"}}>Next</button>
+                    <div className='buttons'>
+                        <Flex>
+                            <Spacer />
+                            <div>
+                                <Button style={{margin:"0px 20px"}}>
+                                    <Link style={{ color: 'white', textDecoration: 'none' }} to='/emr'>
+                                        Back
+                                    </Link>
+                                </Button>
+                            </div>
+                            <div>
+                                <Button style={{margin:"0px 20px"}}>
+                                    <Link style={{ color: 'white', textDecoration: 'none' }} to='/submitted'>
+                                        Next
+                                    </Link>
+                                </Button>
+                            </div>
+                        </Flex>
+                    </div>
                 </div>
             </div>
         </div>

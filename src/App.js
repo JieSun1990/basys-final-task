@@ -9,6 +9,7 @@ import DragAndDropForm from './Components/DragAndDropForm/DragAndDropForm';
 import Questionnaire from './Components/Questionnaire';
 import Header from './Components/Header';
 import EMR from './Components/EMR/EMR';
+import Submitted from './Components/Submitted/Submitted';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                 <Route path='/emr' element={<EMR/>} />
                 <Route path='/details' element={<Details value={value} setValue={setValue} />} />
                 <Route path='/questionnaire' element={<Questionnaire />} />
+                <Route path='/submitted' element={<Submitted />} />
               </Routes>
             </div>
           </div>
